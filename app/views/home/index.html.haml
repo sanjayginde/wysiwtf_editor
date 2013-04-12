@@ -1,0 +1,14 @@
+%h1 WYSIWTF Editor
+%hr
+%br
+=text_area_tag :editor1, "Here is some text.", :class => "redactor", :rows => 40, :cols => 120
+%br
+%br
+=text_area_tag :editor2, "<p>Here is <i>even more</i> text.</p>", :class => "redactor", :rows => 40, :cols => 120
+
+#diff-display
+
+%button{:type => 'button', :id => 'remote-diff' } Diff
+#remote-diff-result{:style => 'border: 1px solid #ccc; min-width: 300px; min-height: 300px'}
+  %span{:style => 'color: #ccc'} Click diff to view it...
+
