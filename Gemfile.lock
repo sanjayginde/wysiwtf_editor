@@ -1,6 +1,5 @@
-GIT
-  remote: https://github.com/sanjayginde/daisydiff.git
-  revision: ff093d71dc5bc97ed0abf21424202ccf56fbd64f
+PATH
+  remote: ../daisydiff
   specs:
     daisydiff (0.0.1)
       cocaine (~> 0.5.1)

@@ -61,9 +61,10 @@ var $remote_diff_result = $('#remote-diff-result');
 
 $('#remote-diff').click(function(event) {
 
+  $remote_diff_result.maskLoading()
   $.post("/diff/html", { html1: html1(), html2: html2() } )
     .done(function(data, textStatus, jqXHR) { $remote_diff_result.html(data); })
     .fail(function() { alert("some shit done broke."); })
-    .always(function() { $remote_diff_result.unmaskLoading() });
+    .always(function() { $remote_diff_result.unmaskLoading(); });
 
 });
