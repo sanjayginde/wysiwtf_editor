@@ -1,5 +1,8 @@
 //= require jquery
+//= require underscore
+//= require backbone
 //= require redactor-rails
+//= require parsley
 //= require_tree .
 
 

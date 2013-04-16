@@ -1,0 +1,1 @@
+class WysiwtfEditor.Views.RemoteVideoView extends Backbone.View

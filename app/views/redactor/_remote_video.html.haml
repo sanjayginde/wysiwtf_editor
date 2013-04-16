@@ -1,0 +1,14 @@
+#remotevideomodal{:style => "display: none;"}
+  #redactor_modal_content
+    %form#insert_remote_video_form{:action => 'javascript:;'}
+      %label URL
+      %input.redactor_input#redactor_remote_video_url{:type => "text"}/
+      -#
+        %label Text
+        %input#redactor_link_url_text.redactor_input.redactor_link_text{:type => "text"}/
+        %label
+          %input#redactor_link_blank{:type => "checkbox"}/
+          Open link in new tab
+  #redactor_modal_footer
+    %a.redactor_modal_btn.redactor_btn_modal_close{:href => 'javascript:;'} Close
+    %input.redactor_modal_btn#insert_remote_video_btn{:type => "button" , :value => "Insert"}

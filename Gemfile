@@ -14,6 +14,10 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
+  gem 'rails-backbone'
+  gem 'haml_coffee_assets'
+  gem 'parsley-rails'
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
@@ -42,7 +46,8 @@ gem "haml-rails"
 gem "jquery-rails"
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 
-gem 'redactor-rails'
+gem 'paperclip'
+
 gem 'daisydiff', :path => '../daisydiff' #:git => 'https://github.com/sanjayginde/daisydiff.git'
 
-gem 'paperclip'
+gem 'redactor-rails'

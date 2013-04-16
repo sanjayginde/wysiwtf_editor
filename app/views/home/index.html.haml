@@ -16,6 +16,8 @@
 
 
 -content_for :javascript do
+  =render :partial => '/redactor/remote_video'
+
   :javascript
     jQuery(document).ready( function($, document) {
       var csrf_token = $('meta[name=csrf-token]').attr('content');
@@ -33,13 +35,18 @@
         alert(json.error[0] || json.error)
       };
 
-      $('.redactor').redactor(
-        { imageUpload: "#{images_redactor_upload_path}?" + params,
-          imageGetJson:"#{images_redactor_index_path}",
-          imageUploadCallback: onImageUploadSuccess,
-          imageUploadErrorCallback: onImageUploadError,
-          //"css":"style.css",
-          // "path":"/assets/redactor-rails"
-          }
-      );
+      $('.redactor').redactor({
+        plugins: ['remotevideo'],
+        buttons: ['formatting', '|', 'bold', 'italic', 'underline', 'deleted', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|',
+          'link', 'image', '|', 'alignment', '|', 'horizontalrule'],
+
+        // Image upload support
+        imageUpload: "#{images_redactor_upload_path}?" + params,
+        imageGetJson:"#{images_redactor_index_path}",
+        imageUploadCallback: onImageUploadSuccess,
+        imageUploadErrorCallback: onImageUploadError,
+
+        //"css":"style.css",
+        // "path":"/assets/redactor-rails"
+      });
     });
