@@ -42,8 +42,7 @@ gem "haml-rails"
 gem "jquery-rails"
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 
-gem 'nokogiri'
-
-
 gem 'redactor-rails'
 gem 'daisydiff', :path => '../daisydiff' #:git => 'https://github.com/sanjayginde/daisydiff.git'
+
+gem 'paperclip'

@@ -1,3 +1,24 @@
+class ImagesController < ApplicationController
+  include ImagesHelper
+
+  def redactor_index
+    render :json => Image.all.map{ |image| redactor_index_image_as_json(image) }
+  end
+
+  def redactor_upload
+    @image = Image.new
+
+    @image.image = RedactorRails::Http.normalize_param(params[:file], request)
+    if @image.save
+      render :json => redactor_upload_image_as_json(@image)
+    else
+      #TODO send back errors
+      render :nothing => true
+    end
+  end
+
+end
+
 =begin
 class RedactorRails::PicturesController < ApplicationController
   before_filter :authenticate_user! if RedactorRails.picture_model.new.respond_to?(:user_id)

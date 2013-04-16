@@ -14,5 +14,11 @@
 /log/*.log
 /tmp
 
+# Ignore binstubs
+/bin
+
+# Ignore paperclip upload (default location)
+/public/system
+
 # Mac Madness
 .DS_Store

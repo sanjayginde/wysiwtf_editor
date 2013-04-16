@@ -13,3 +13,25 @@
 %button{:type => 'button', :id => 'remote-diff'} Do dat diff
 #remote-diff-result.maskable{:style => 'border: 1px solid #ccc; min-height: 300px;'}
   %span{:style => 'color: #ccc'} Click diff to view it...
+
+
+-content_for :javascript do
+  :javascript
+    jQuery(document).ready( function($, document) {
+      var csrf_token = $('meta[name=csrf-token]').attr('content');
+      var csrf_param = $('meta[name=csrf-param]').attr('content');
+      var params = "";
+      if (csrf_param !== undefined && csrf_token !== undefined) {
+        params = csrf_param + "=" + encodeURIComponent(csrf_token);
+      }
+
+      $('.redactor').redactor(
+        { "imageUpload": "#{images_redactor_upload_path}?" + params,
+          "imageGetJson":"#{images_redactor_index_path}",
+          //"fileUpload":"/redactor_rails/documents?" + params,
+          //"fileGetJson":"/redactor_rails/documents",
+          //"css":"style.css",
+          "path":"/assets/redactor-rails"
+          }
+      );
+    });
