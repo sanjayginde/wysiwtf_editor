@@ -12,8 +12,7 @@ class ImagesController < ApplicationController
     if @image.save
       render :json => redactor_upload_image_as_json(@image)
     else
-      #TODO send back errors
-      render :nothing => true
+      render :json => { :error => @image.errors.full_messages }
     end
   end
 

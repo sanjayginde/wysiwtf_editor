@@ -25,13 +25,21 @@
         params = csrf_param + "=" + encodeURIComponent(csrf_token);
       }
 
+      var onImageUploadSuccess = function (obj, json) {
+        // debugger;
+      };
+
+      var onImageUploadError = function (obj, json) {
+        alert(json.error[0] || json.error)
+      };
+
       $('.redactor').redactor(
-        { "imageUpload": "#{images_redactor_upload_path}?" + params,
-          "imageGetJson":"#{images_redactor_index_path}",
-          //"fileUpload":"/redactor_rails/documents?" + params,
-          //"fileGetJson":"/redactor_rails/documents",
+        { imageUpload: "#{images_redactor_upload_path}?" + params,
+          imageGetJson:"#{images_redactor_index_path}",
+          imageUploadCallback: onImageUploadSuccess,
+          imageUploadErrorCallback: onImageUploadError,
           //"css":"style.css",
-          "path":"/assets/redactor-rails"
+          // "path":"/assets/redactor-rails"
           }
       );
     });
