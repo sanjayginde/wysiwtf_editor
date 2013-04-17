@@ -1,9 +1,12 @@
 //= require jquery
+//= require jquery_ujs
 //= require underscore
+//= require hamlcoffee
 //= require backbone
-//= require redactor-rails
 //= require parsley
-//= require_tree .
+//= require_tree ./lib
+//= require ./backbone/backbone
+//= require_tree ./redactor-rails
 
 
 var $editor1 = $('#editor1'),

@@ -16,7 +16,7 @@
 
 
 -content_for :javascript do
-  =render :partial => '/redactor/remote_video'
+  -#=render :partial => '/redactor/remote_video'
 
   :javascript
     jQuery(document).ready( function($, document) {
@@ -36,9 +36,9 @@
       };
 
       $('.redactor').redactor({
-        plugins: ['remotevideo'],
+        plugins: ['remote_video'],
         buttons: ['formatting', '|', 'bold', 'italic', 'underline', 'deleted', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|',
-          'link', 'image', '|', 'alignment', '|', 'horizontalrule'],
+          'link', 'image', 'remote_video', '|', 'alignment', '|', 'horizontalrule'],
 
         // Image upload support
         imageUpload: "#{images_redactor_upload_path}?" + params,

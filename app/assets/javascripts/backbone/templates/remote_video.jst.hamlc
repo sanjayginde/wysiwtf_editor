@@ -1,0 +1,13 @@
+%form.js-remote-video{:action => 'javascript:;'}
+  #redactor_modal_content
+    %label URL
+    %input.redactor_input.js-url{:type => "text", :value => "http://www.youtube.com/watch?v=JMJwcOiBoZE"}/
+    -#
+      %label Text
+      %input.redactor_input{:type => "text"}/
+      %label
+        %input#redactor_link_blank{:type => "checkbox"}/
+        Open link in new tab
+  #redactor_modal_footer
+    %a.redactor_modal_btn.redactor_btn_modal_close{:href => 'javascript:;'} Close
+    %input.redactor_modal_btn{:type => "submit" , :value => "Insert"}

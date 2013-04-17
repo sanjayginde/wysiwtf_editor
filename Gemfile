@@ -50,4 +50,3 @@ gem 'paperclip'
 
 gem 'daisydiff', :path => '../daisydiff' #:git => 'https://github.com/sanjayginde/daisydiff.git'
 
-gem 'redactor-rails'
