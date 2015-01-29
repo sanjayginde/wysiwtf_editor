@@ -1,11 +1,6 @@
 //= require jquery
 //= require jquery_ujs
-//= require underscore
-//= require hamlcoffee
-//= require backbone
-//= require parsley
 //= require_tree ./lib
-//= require ./backbone/backbone
 //= require_tree ./redactor-rails
 
 

@@ -51,6 +51,8 @@ WysiwtfEditor::Application.routes.draw do
   get  'images/redactor_index',  :to => 'images#redactor_index',  :as => 'images_redactor_index'
   post 'images/redactor_upload', :to => 'images#redactor_upload', :as => 'images_redactor_upload'
 
+  get 'quill', :to => 'home#quill'
+
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'home#index'
