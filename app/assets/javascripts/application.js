@@ -1,7 +1,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ./lib
-//= require_tree ./redactor-rails
+//= require redactor/plugins
+//= require redactor/redactor
+//= require quill/quill
 
 
 var $editor1 = $('#editor1'),

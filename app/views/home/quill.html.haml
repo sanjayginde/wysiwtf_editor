@@ -1,0 +1,30 @@
+%h1 WYSIWTF Quill Editor
+%hr
+%br
+#toolbar1
+  %button.ql-bold Bold
+  %button.ql-italic">Italic
+
+
+#editor1
+  Hello World!</div>
+  <div>Some initial <b>bold</b> text</div>
+  <div><br></div>
+</div>
+=text_area_tag :editor1, "", class: "redactor", rows: 40, cols: 120
+
+-content_for :javascript do
+  :javascript
+    jQuery(document).ready( function($, document) {
+      var csrf_token = $('meta[name=csrf-token]').attr('content');
+      var csrf_param = $('meta[name=csrf-param]').attr('content');
+      var params = "";
+      if (csrf_param !== undefined && csrf_token !== undefined) {
+        params = csrf_param + "=" + encodeURIComponent(csrf_token);
+      }
+
+
+      var quill = new Quill('#editor1');
+      // quill.addModule('toolbar', { container: '#toolbar' });
+
+    });

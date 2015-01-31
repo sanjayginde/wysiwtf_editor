@@ -9,4 +9,8 @@ class HomeController < ApplicationController
 
     puts DaisyDiff.strings(html1, html2)
   end
+
+  def quill
+  end
+
 end

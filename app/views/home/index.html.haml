@@ -1,10 +1,10 @@
 %h1 WYSIWTF Editor
 %hr
 %br
-=text_area_tag :editor1, "<p>Here is some text.</p><p><img src=\"http://blogs.houstonpress.com/rocks/disco_stu2.gif\"></p>", :class => "redactor", :rows => 40, :cols => 120
+=text_area_tag :editor1, "<p>Here is some text.</p><p></p>", :class => "redactor", :rows => 40, :cols => 120
 %br
 %br
-=text_area_tag :editor2, "<p>Here is <i>even more</i> text.</p><img src=\"http://www.teesnthings.com/ProductImages/tv-show/simpsons-t-shirts/disco-stu-air-freshener.jpg\"></p>", :class => "redactor", :rows => 40, :cols => 120
+=text_area_tag :editor2, "<p>Here is <i>even more</i> text.</p></p>", :class => "redactor", :rows => 40, :cols => 120
 
 #diff-display
 
@@ -36,9 +36,16 @@
       };
 
       $('.redactor').redactor({
-        plugins: ['remote_video'],
         buttons: ['formatting', '|', 'bold', 'italic', 'underline', 'deleted', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|',
           'link', 'image', 'remote_video', '|', 'alignment', '|', 'horizontalrule'],
+        plugins: ['emdash'],
+
+        keyupCallback: function(event) {
+          // this.emdash.onKeyup(event);
+        },
+        keydownCallback:  function(event) {
+          // this.emdash.onKeydown(event);
+        },
 
         // Image upload support
         imageUpload: "#{images_redactor_upload_path}?" + params,
