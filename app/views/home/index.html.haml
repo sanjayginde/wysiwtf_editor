@@ -1,10 +1,11 @@
 %h1 WYSIWTF Editor
 %hr
 %br
+%button#insert-comment{type: "button", disabled: true} Comment
 =text_area_tag :editor1, "<p>Here is some text.</p><p></p>", :class => "redactor", :rows => 40, :cols => 120
 %br
 %br
-=text_area_tag :editor2, "<p>Here is <i>even more</i> text.</p></p>", :class => "redactor", :rows => 40, :cols => 120
+-#=text_area_tag :editor2, "<p>Here is <i>even more</i> text.</p></p>", :class => "redactor", :rows => 40, :cols => 120
 
 #diff-display
 
@@ -38,7 +39,7 @@
       $('.redactor').redactor({
         buttons: ['formatting', '|', 'bold', 'italic', 'underline', 'deleted', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|',
           'link', 'image', 'remote_video', '|', 'alignment', '|', 'horizontalrule'],
-        plugins: ['emdash'],
+        plugins: ['emdash', 'inline_commenting'],
 
         keyupCallback: function(event) {
           // this.emdash.onKeyup(event);
